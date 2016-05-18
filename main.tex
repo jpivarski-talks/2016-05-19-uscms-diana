@@ -61,7 +61,7 @@
 
 \title[2016-05-19-uscms-diana]{The DIANA-HEP Project}
 \author{Jim Pivarski}
-\institute{Princeton University -- DIANA}
+\institute{Princeton University}
 \date{May 19, 2016}
 
 \begin{document}
@@ -106,17 +106,17 @@ Not a (single) software product, but a collaborative project to extend software 
 \end{uncoverenv}
 \end{frame}
 
-\begin{frame}{SI$^2$}
+\begin{frame}{$(\mbox{SI})^2$}
 \vspace{0.4 cm}
 \includegraphics[width=\linewidth]{si2_cover.png}
 \end{frame}
 
-\begin{frame}{SI$^2$}
-\vspace{0.4 cm}
-\includegraphics[width=\linewidth]{si2_puzzle.png}
-\end{frame}
+%% \begin{frame}{$(\mbox{SI})^2$}
+%% \vspace{0.4 cm}
+%% \includegraphics[width=\linewidth]{si2_puzzle.png}
+%% \end{frame}
 
-\begin{frame}{SI$^2$}
+\begin{frame}{$(\mbox{SI})^2$}
 \vspace{0.75 cm}
 \mbox{ } \hfill \mbox{\hspace{0.4 cm}\includegraphics[height=4 cm]{puzzle.png}\hspace{-0.4 cm}}
 
@@ -194,7 +194,7 @@ Not a (single) software product, but a collaborative project to extend software 
 %% \end{columns}
 %% \end{frame}
 
-\begin{frame}{Project team}
+\begin{frame}{DIANA Project team}
 \scriptsize
 \begin{description}
 \item[Peter Elmer] (lead PI) Princeton, CMS
@@ -279,7 +279,7 @@ Not a (single) software product, but a collaborative project to extend software 
 
 \vspace{-2 cm}
 \begin{itemize}
-\item Computer science background, postdoc in \\ machine learning, scikit-Learn core developer
+\item Computer science background, postdoc in \\ machine learning, scikit-learn core developer
 \item Development of machine learning software and \\ applications to HEP
 \begin{itemize}
 \item carl: likelihood-free inference toolbox
@@ -380,8 +380,8 @@ One for 10--12 weeks in the summer, either developing or using data-intensive to
 
 \column{0.5\linewidth}
 \begin{itemize}\setlength{\itemsep}{0.3 cm}
-\item Forum for discussion about analysis techniques
-\item Explore near-term and long-term possibilities, ideas, and collaboration
+%% \item Forum for discussion about analysis techniques
+%% \item Explore near-term and long-term possibilities, ideas, and collaboration
 \item Engage people from multiple experiments and from beyond HEP
 \item Steady state: expect 2 meetings per month
 \item If you have ideas, please contact us!
@@ -394,7 +394,7 @@ One for 10--12 weeks in the summer, either developing or using data-intensive to
 \includegraphics[width=\linewidth]{github_organization.png}
 \end{frame}
 
-\begin{frame}{My work}
+\begin{frame}{My own work}
 \vspace{2.5 cm}
 \mbox{ } \hfill {\hspace{0.6 cm}\includegraphics[height=2.5 cm]{snowplow.jpg}\hspace{-0.6 cm}}
 
@@ -412,41 +412,46 @@ I've been helping an analysis group port their dark matter search from custom C+
 \end{uncoverenv}
 \end{frame}
 
-\begin{frame}{My work}
+\begin{frame}{My own work}
+\setbeamercolor{normal text}{fg=gray,bg=}
+\setbeamercolor{alerted text}{fg=black,bg=}
+\usebeamercolor{normal text}
 \vspace{0.25 cm}
 \begin{itemize}
-\item<1-> Reading complex data structures from ROOT:
+\item<1-> \alert<1>{Reading complex data structures from ROOT:}
 \begin{itemize}
-\item TTrees containing arbitrary C++ classes
-\item to Avro (schemaed, binary JSON), Parquet (columnar store)
-\item directly into Spark (in Java Virtual Machine (JVM))
+\item \alert<1>{TTrees containing arbitrary C++ classes (whole events)}
+\item \alert<1>{to Avro (schemaed, binary JSON), Parquet (columnar store)}
+\item \alert<1>{directly into Spark (in Java Virtual Machine (JVM))}
 \end{itemize}
 
-\item<2-> Generic access to C++ and ROOT from JVM
+\item<2-> \alert<2>{Generic access to C++ and ROOT from JVM}
 \begin{itemize}
-\item write API in Java or Scala, implementation in C++
+\item \alert<2>{write API in Java or Scala, implementation in C++}
 \end{itemize}
 
-\item<3-> Histogram aggregation in a functional paradigm
+\item<3-> \alert<3-7>{Histogram aggregation in a functional paradigm}
 \begin{itemize}
-\item a better fit to Spark's functional workflows
-\item links to ROOT, Matplotlib, etc., rather than reimplementing plotting code
-\item side-effect of formalizing analysis:
+\item<4-> \alert<4-7>{a better fit to Spark's functional workflows}
+\item<5-> \alert<5-7>{exports to ROOT, Matplotlib, etc., rather than reimplementing plotting code}
+\item<6-> \alert<6-7>{side-effect of formalizing analysis:}
+\begin{uncoverenv}<6->
 \begin{itemize}
-\item automatically identify which cuts are applied to each plot
-\item more robust against modifications
+\item \alert<6-7>{automatically identify which cuts are applied to each plot}
+\item \alert<6-7>{more robust against modifications (e.g.\ unit changes)}
 \end{itemize}
-\item small framework can aggregate data in hard-to-reach places, such as GPU code
+\end{uncoverenv}
+\item<7-> \alert<7>{small framework can aggregate data in hard-to-reach places, such as GPU code, awk-like quick plots}
 \end{itemize}
 
-\item<4-> Transpile restricted Python to low-level backends (future)
+\item<8-> \alert<8>{Transpile restricted Python to low-level backends (future)}
 \begin{itemize}
-\item key is to identify restrictions that give optimizer strong assumptions, but leave enough capabilities for physics code\ldots
+\item \alert<8>{key is to identify restrictions that give optimizer strong assumptions, but leave enough capabilities for physics code\ldots}
 \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Summary}
+\begin{frame}{Summary/Overview}
 \vspace{0.5 cm}
 \begin{columns}
 \column{1.15\linewidth}
